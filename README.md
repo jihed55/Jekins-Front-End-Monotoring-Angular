@@ -1,27 +1,64 @@
-# MyProject
+# Final year project : Monitoring platform using Jenkins ecosystem 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+## Spring Backend Server Project 
+>The project is based on a web server application used as midelware between the client and Jenkins server which uses the following technologies:
+-Eclipse Ide 
+-Java Jdk 11.0.6
+-Spring MVC with Spring Boot and spring Security
+-Maven
+-Jenkins 
+-PostgresSql 
+-Jenkins ver. 2.204.2
 
-## Development server
+The architecture of this application is built with the following part:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![](https://i.imgur.com/j0T3aD7.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Controller: Implements the processing logic of the web service (Rest Api ), parsing of parameters and validation of in- and outputs.
+Service: Implements the business logic and handles the access to the DataAccessObjects.
+DataAccessObjects: Interface for the database. Inserts, updates, deletes and reads objects from the database.
+DomainObjects: Functional Objects which might be persisted in the database.
+Jenkins Communication Module : Rest Api Layer used to communicate with th jenkins server .
+Jenkins Server
+## :memo: Purpose
+This document describes setup guidance for the market Project.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup 
+* Configure The App to be runned on 8081 as a Port
+* Configure The Jenkins To be running on 8080 as a port (http://localhost:8081)
+* configure Postgres Sql to be running on 3306 as a port 
 
-## Running end-to-end tests
+* 1. - [ Note  : You must add these rows to the data base before you run your server :
+* INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+] 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## How to start the app :accept: 
+-Build The Project Using Maven From Eclipse
+-Run Project From Eclipse
+You should be able to starts a webserver on port 80801 (http://localhost:8081) .
 
-## Further help
+## Frontend Dependencies
+Move into the project Directory, open cmd in interface folder 
+```
+cd my-project 
+npm install 
+ng serve 
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+
+
+
+
+
+
+
